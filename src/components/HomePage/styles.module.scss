@@ -1,58 +1,84 @@
 .sortProducts {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
 
-    select {
-        margin-left: 0.5rem;
-    }
+  select {
+    margin-left: 0.5rem;
+  }
 }
 
 .gamesList {
-    ul {
-        list-style: none;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
+  ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  li {
+    padding: 1.25rem;
+    background-color: #c9c9c9;
+    border-radius: 20px;
+    width: 15rem;
+    margin: 3rem auto 1rem auto;
+
+    font-family: "Montserrat", "Sans-serif";
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 10rem;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
     }
 
-    li {
-        padding: 1.25rem;
-        background-color: #c9c9c9;
-        border-radius: 20px;
-        width: 15rem;
-        margin: 3rem auto 1rem auto;
+    .productDetails {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
 
-        font-family: 'Roboto', 'Sans-serif';
-        text-align: center;
+      p {
+        margin-bottom: 0.5rem;
+      }
+    }
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .addToCart {
+      display: flex;
+      align-items: center;
 
-        img {
-            width: 10rem;
-            margin-top: 1rem;
-            margin-bottom: 0.5rem;
-        }
+      width: 10rem;
+      height: 2rem;
 
-        .productDetails {
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            margin-top: 1.5rem;
-    
-            button {
-                background-color: green;
-                border-radius: 10px;
-                width: 2.4rem;
-                height: 2.4rem;
-    
-                img {
-                    margin: auto;
-                    width: 2.2rem;
-                }
-            }
+      background-color: green;
+      border: none;
+      border-radius: 2rem;
+
+      margin-top: 0.5rem;
+
+      span {
+        font-family: "Montserrat", "Sans-serif";
+        font-size: 1rem;
+        color: #ebeff5;
+        font-weight: bold;
+        margin: 0 0 0 1rem;
+      }
+
+      img {
+        margin: auto;
+        width: 1.8rem;
+      }
+    }
+
+    .addToCart:hover {
+        opacity: 0.6;
+        span {
+            -webkit-text-stroke: 0.1px black;
         }
     }
+  }
 }

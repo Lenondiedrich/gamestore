@@ -4,6 +4,7 @@ import Header from "./components/Header/index";
 import HomePage from "./components/HomePage/index";
 import CartPage from "./components/CartPage/index";
 
+
 function App() {
   return (
     <Router>

@@ -1,3 +1,9 @@
+import styles from './styles.module.scss';
+
 export default function CartPage() {
-    return <h1>cartpage</h1>
+    return(
+        <div className={styles.cartContainer}>
+
+        </div>
+    )
 }

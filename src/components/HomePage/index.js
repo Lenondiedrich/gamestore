@@ -38,12 +38,18 @@ export default function HomePage() {
           {games.map((game) => {
             return (
               <li key={game.id}>
-                <Game
-                  name={game.name}
-                  image={game.image}
-                  price={game.price}
-                  score={game.score}
-                />
+                <div className={styles.productDetails}>
+                  <Game
+                    name={game.name}
+                    image={game.image}
+                    price={game.price}
+                    score={game.score}
+                  />
+                </div>
+                  <button className={styles.addToCart}>
+                    <span>Adicionar</span>
+                    <img src="/cart-icon.svg" alt="Add to cart" />
+                  </button>
               </li>
             );
           })}
