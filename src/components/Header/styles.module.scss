@@ -1,0 +1,28 @@
+.headerContainer {
+  padding: 1.5rem;
+  background-color: #5eafff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  span {
+    font-size: 2rem;
+    color: #ebeff5;
+    font-weight: bold;
+  }
+
+  .headerBasket {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 2.5rem;
+    }
+
+    span {
+      margin-left: 1.2rem;
+      margin-right: 1rem;
+    }
+  }
+}
