@@ -18,7 +18,7 @@ export default function CartPage() {
           </Link>
         </>
       ) : (
-        <div>
+        <>
           <p style={{ fontSize: "1.5rem" }}>Itens no carrinho:</p>
           <div className={styles.itemContainer}>
             {basket.map((item) => (
@@ -33,14 +33,27 @@ export default function CartPage() {
           <div className={styles.cartTotal}>
             {
               getBasketTotal(basket) > 250 ? (
+                <>
+                <p style={{fontSize: '1rem'}}>Compras acima de R$250,00 tem frete grátis!</p>
+                <p>Frete: Gratuito</p>
                 <p>Total: {formatter.format(getBasketTotal(basket))}</p>
+                <Link to="/">
+                  <button>Continuar comprando</button>
+                </Link>
+                </>
               ) : (
+                <>
+                <p>Frete: {formatter.format(basket.length * 10)}</p>
                 <p>Total: {formatter.format(getBasketTotal(basket) + basket.length * 10)}</p>
+                <Link to="/">
+                  <button>Continuar comprando</button>
+                </Link>
+                </>
               )
             }
             
           </div>
-        </div>
+        </>
       )}
     </div>
   );
