@@ -1,7 +1,7 @@
 # GameStore
 This project was designed for a job application at Supera Tecnologia
 
-# Tecnologies
+# Technologies
 - ReactJs
 - Axios
 - Json-Server
