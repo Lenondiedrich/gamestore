@@ -2,6 +2,7 @@ import styles from "./styles.module.scss";
 import { useState, useEffect } from "react";
 import api from "../../services/api";
 import Game from "../Game";
+import Value from '../../StateProvider';
 
 export default function HomePage() {
   const [games, setGames] = useState([]);
@@ -26,7 +27,6 @@ export default function HomePage() {
         <label>
           Ordenar por:
           <select>
-            <img src="/arrow-down-icon.svg" alt="Ordenar por" />
             <option value="Preço">Preço</option>
             <option value="Popularidade">Popularidade</option>
             <option value="Alfabética">Alfabética</option>
@@ -36,6 +36,19 @@ export default function HomePage() {
       <section className={styles.gamesList}>
         <ul>
           {games.map((game) => {
+            const [{ basket }, dispatch] = Value();
+
+            const addToBasket = () => {
+              dispatch({
+                type: "ADD_TO_BASKET",
+                item: {
+                  id: game.id,
+                  name: game.name,
+                  image: game.image,
+                  price: game.price
+                },
+              });
+            };
             return (
               <li key={game.id}>
                 <div className={styles.productDetails}>
@@ -46,10 +59,10 @@ export default function HomePage() {
                     score={game.score}
                   />
                 </div>
-                  <button className={styles.addToCart}>
-                    <span>Adicionar</span>
-                    <img src="/cart-icon.svg" alt="Add to cart" />
-                  </button>
+                <button className={styles.addToCart} onClick={addToBasket}>
+                  <span>Adicionar</span>
+                  <img src="/cart-icon.svg" alt="Add to cart" />
+                </button>
               </li>
             );
           })}

@@ -1,7 +1,4 @@
-var formatter = new Intl.NumberFormat("pt-BR", {
-  style: "currency",
-  currency: "BRL",
-});
+import formatter from '../../utils/formatter';
 
 export default function Game({ id, name, price, score, image }) {
   return (

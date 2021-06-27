@@ -1,0 +1,28 @@
+.gameContainer {
+    display: flex;
+    align-items: center;
+    margin-top: 3rem;
+
+    img {
+        width: 6rem;
+    }
+
+    .gameInfo {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        button {
+            width: 7rem;
+            border: none;
+            background-color: #ff570f;
+            color: white;
+            font-family: 'Montserrat', 'sans-serif';
+            margin-top: 1rem;
+        }
+    
+        button:hover {
+            opacity: 0.8;
+            color: black;
+        }
+    }
+}
